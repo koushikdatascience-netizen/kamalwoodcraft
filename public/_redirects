@@ -1,0 +1,14 @@
+/about /#about 302
+/products /#products 302
+/services /#products 302
+/services/* /#products 302
+/solutions / 302
+/solutions/* / 302
+/industries / 302
+/industries/* / 302
+/portfolio /#workshop 302
+/portfolio/* /#workshop 302
+/careers / 302
+/blog / 302
+/blog/* / 302
+/contact /#contact 302

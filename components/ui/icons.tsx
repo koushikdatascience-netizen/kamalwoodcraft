@@ -1,0 +1,46 @@
+import {
+  BarChart3,
+  Bot,
+  BriefcaseBusiness,
+  CalendarCheck,
+  Chrome,
+  Cloud,
+  Code2,
+  Factory,
+  GraduationCap,
+  HeartPulse,
+  Home,
+  Megaphone,
+  MonitorCog,
+  ShieldCheck,
+  ShoppingCart,
+  Smartphone,
+  Truck,
+  Users,
+  Workflow,
+  Globe2
+} from "lucide-react";
+import type { IconMap } from "@/types";
+
+export const icons: IconMap = {
+  bot: Bot,
+  globe: Globe2,
+  smartphone: Smartphone,
+  workflow: Workflow,
+  code: Code2,
+  monitor: MonitorCog,
+  chrome: Chrome,
+  cloud: Cloud,
+  chart: BarChart3,
+  megaphone: Megaphone,
+  shield: ShieldCheck,
+  users: Users,
+  briefcase: BriefcaseBusiness,
+  factory: Factory,
+  graduation: GraduationCap,
+  heart: HeartPulse,
+  home: Home,
+  truck: Truck,
+  shopping: ShoppingCart,
+  calendar: CalendarCheck
+};
