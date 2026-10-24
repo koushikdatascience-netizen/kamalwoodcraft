@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { Menu, MessageCircle, X } from "lucide-react";
 import { company, navItems } from "@/content/site";
 import { Logo } from "@/components/ui/logo";
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -31,24 +30,24 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className={cn("fixed inset-x-0 top-0 z-50 border-b transition", scrolled || open ? "border-white/10 bg-navy-950/92 backdrop-blur" : "border-white/10 bg-transparent")}>
+    <header className={cn("site-header fixed inset-x-0 top-0 z-50", scrolled && "site-header-scrolled")}>
       <div className="container flex h-20 items-center justify-between">
         <Logo />
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
           {navItems.map((item) => (
-            <a className={cn("rounded-md px-3 py-2 text-sm font-semibold text-white/86 hover:text-white", pathname === item.href && "text-amber-300")} href={item.href} key={item.label}>
+            <a className={cn("site-nav-link rounded-md px-3 py-3 text-sm font-semibold", pathname === item.href && "site-nav-link-active")} href={item.href} key={item.label}>
               {item.label}
             </a>
           ))}
         </nav>
         <div className="hidden lg:block">
-          <Button href={company.whatsappHref} className="bg-emerald-600 hover:bg-emerald-500">
+          <a href={company.whatsappHref} className="header-quote" target="_blank" rel="noopener noreferrer">
             <MessageCircle className="size-4" />
             WhatsApp Quote
-          </Button>
+          </a>
         </div>
         <button
-          className="relative z-[110] grid size-11 place-items-center rounded-md border border-white/20 text-white lg:hidden"
+          className="grid size-12 place-items-center rounded-md border border-white/40 text-white lg:hidden"
           type="button"
           aria-label="Open menu"
           aria-expanded={open}
@@ -68,7 +67,7 @@ export function Header() {
           </div>
           <nav className="mt-10 grid gap-2" aria-label="Mobile navigation">
             {navItems.map((item) => (
-              <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-lg font-semibold text-white hover:bg-white/8">
+              <a key={item.href} href={item.href} onClick={() => setOpen(false)} className="rounded-md px-3 py-3 text-lg font-semibold text-white hover:bg-white/10">
                 {item.label}
               </a>
             ))}

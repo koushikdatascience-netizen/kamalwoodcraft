@@ -20,7 +20,7 @@ import { FAQAccordion } from "@/components/ui/faq-accordion";
 import { company } from "@/content/site";
 
 const quoteText = encodeURIComponent(
-  "Hi Kamal Woodcraft,\n\nI want bulk order details:\n\nProduct:\nQuantity:\nSize/Design:\nWood type:\nLocation:"
+  "Hi Kamal Woodcraft,\n\nI'd like a quotation for cutting or turning work.\n\nWork required:\nQuantity:\nSize/Design:\nWood supplied:\nLocation:"
 );
 const priceListText = encodeURIComponent(
   "Hi Kamal Woodcraft,\n\nPlease share your bulk price list.\n\nI am a:\nProducts I need:"
@@ -29,11 +29,12 @@ const quoteHref = `https://wa.me/916290664570?text=${quoteText}`;
 const priceListHref = `https://wa.me/916290664570?text=${priceListText}`;
 
 const stats = [
-  ["Since", "2018"],
-  ["Registered", "2022"],
-  ["Minimum order", "20-50 pcs"],
-  ["Location", "Kalyani, Nadia"]
+  ["Since 2018", "Family-run business"],
+  ["Custom sizes", "From your sample or design"],
+  ["Kalyani workshop", "Nadia, West Bengal"]
 ];
+
+const heroServices = ["Sofa & bed legs", "Table legs", "Staircase parts", "Wood turning", "Bandsaw cutting", "Jali cutting"];
 
 const products = [
   {
@@ -119,36 +120,37 @@ export default function HomePage() {
   return (
     <>
       <section className="woodcraft-hero">
-        <div className="container relative z-10 grid min-h-[760px] items-center gap-12 py-28 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-md border border-amber-200/35 bg-white/10 px-4 py-2 text-sm font-extrabold uppercase text-amber-100 backdrop-blur">
-              <MapPin className="size-4" />
-              Kalyani, Nadia · Est. 2018
-            </div>
-            <h1 className="mt-6 font-heading text-4xl font-extrabold leading-tight text-white md:text-6xl xl:text-7xl">
-              Bulk Wooden Furniture Parts Manufacturer
+        <div className="container woodcraft-hero-layout">
+          <div className="woodcraft-hero-copy">
+            <p className="woodcraft-hero-eyebrow">Kamal Woodcraft <span aria-hidden="true">/</span> Kalyani, Nadia</p>
+            <h1 className="woodcraft-hero-title font-heading">
+              <span>Your wood. Your design.</span>
+              Expert cutting and turning.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-100">
-              Kamal Woodcraft manufactures wooden sofa legs, bed legs, table legs, staircase components, custom turned parts, and jali cutting work for furniture shops, carpenters, contractors, and designers.
+            <p className="woodcraft-hero-description">
+              Bring your timber and a sample or drawing. We cut and turn it to size.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <ul className="woodcraft-hero-services" aria-label="Woodworking services">
+              {heroServices.map((service) => <li key={service}>{service}</li>)}
+            </ul>
+            <div className="woodcraft-hero-actions">
               <a className="button-wa" href={quoteHref} target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="size-5" />
-                Get Bulk Quote
+                Send Design for a Quote
               </a>
               <a className="button-light" href="tel:+918583911435">
                 <Phone className="size-5" />
                 Call 85839 11435
               </a>
             </div>
-            <div className="mt-9 grid max-w-2xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <dl className="woodcraft-hero-proof">
               {stats.map(([label, value]) => (
                 <div className="hero-stat" key={label}>
-                  <span>{label}</span>
-                  <strong>{value}</strong>
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
                 </div>
               ))}
-            </div>
+            </dl>
           </div>
           <div className="hero-product-frame">
             <Image src="/woodcraft/hero-products.png" alt="Kamal Woodcraft wooden furniture parts including jali panels and turned legs" width={1536} height={1024} priority className="h-full w-full object-cover" />

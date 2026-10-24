@@ -85,7 +85,7 @@ textarea {
 
 .section-title {
   color: #1c1917;
-  font-family: Manrope, Inter, system-ui, sans-serif;
+  font-family: "Archivo Variable", Arial, sans-serif;
   font-size: clamp(2.15rem, 4vw, 3.75rem);
   font-weight: 800;
   line-height: 1.05;
@@ -130,58 +130,207 @@ textarea {
   box-shadow: 0 18px 45px rgba(68, 64, 60, 0.12);
 }
 
-.woodcraft-hero {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 78% 12%, rgba(217, 119, 6, 0.22), transparent 32%),
-    linear-gradient(135deg, #1c1917 0%, #3f2414 48%, #0f2218 100%);
+.site-header {
+  border-bottom: 1px solid #414743;
+  background: #202622;
+  transition: box-shadow 0.2s ease;
 }
 
-.woodcraft-hero::before {
+.site-header-scrolled {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+}
+
+.site-nav-link {
+  color: #f3e9dc;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.site-nav-link:hover {
+  background: #343c36;
+  color: #ffffff;
+}
+
+.site-nav-link-active {
+  color: #f4ce83;
+}
+
+.header-quote {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #9baa9e;
+  border-radius: 6px;
+  padding: 10px 16px;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.header-quote:hover {
+  border-color: #ffffff;
+  background: #343c36;
+}
+
+.woodcraft-hero {
+  overflow: hidden;
+  background: #202622;
+  color: #ffffff;
+}
+
+.woodcraft-hero-layout {
+  display: grid;
+  align-items: center;
+  gap: 32px;
+  padding-top: 128px;
+  padding-bottom: 40px;
+}
+
+.woodcraft-hero-copy {
+  min-width: 0;
+}
+
+.woodcraft-hero-eyebrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #e7d5b6;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.woodcraft-hero-eyebrow span {
+  color: #929e94;
+}
+
+.woodcraft-hero-title {
+  margin-top: 20px;
+  max-width: 640px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+.woodcraft-hero-title span {
+  display: block;
+  color: #f4ce83;
+}
+
+.woodcraft-hero-description {
+  margin-top: 20px;
+  max-width: 540px;
+  color: #e0e5df;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.woodcraft-hero-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 18px;
+  color: #c9d2ca;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.woodcraft-hero-services li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.woodcraft-hero-services li::before {
   content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
-  background-size: 54px 54px;
-  mask-image: linear-gradient(to bottom, #000, transparent 82%);
+  width: 3px;
+  height: 3px;
+  flex-shrink: 0;
+  background: #e8c17c;
+}
+
+.woodcraft-hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.woodcraft-hero .button-light {
+  border-color: #a6b2a8;
+  background: transparent;
+  color: #ffffff;
+}
+
+.woodcraft-hero .button-light:hover {
+  border-color: #ffffff;
+  background: #343c36;
 }
 
 .hero-product-frame {
   overflow: hidden;
-  border: 1px solid rgba(245, 158, 11, 0.28);
-  border-radius: 8px;
-  aspect-ratio: 1.38;
-  background: #211713;
-  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+  border: 1px solid #8f998c;
+  border-radius: 4px;
+  aspect-ratio: 1.5;
+  background: #d3d6c9;
+}
+
+.woodcraft-hero-proof {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+  border-top: 1px solid #566057;
+  padding-top: 18px;
 }
 
 .hero-stat {
-  min-height: 82px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 14px;
-  backdrop-filter: blur(10px);
+  min-width: 0;
 }
 
-.hero-stat span {
-  display: block;
-  color: #fde68a;
-  font-size: 0.74rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.hero-stat strong {
-  display: block;
-  margin-top: 6px;
+.hero-stat dt {
   color: #ffffff;
-  font-family: var(--font-manrope), Manrope, Inter, system-ui, sans-serif;
-  font-size: 1.22rem;
-  font-weight: 800;
+  font-family: "Archivo Variable", Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.hero-stat dd {
+  margin-top: 5px;
+  color: #bcc8be;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+  .woodcraft-hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .woodcraft-hero-title {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .woodcraft-hero-layout {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 48px;
+    padding-top: 136px;
+    padding-bottom: 56px;
+  }
+
+  .woodcraft-hero-title {
+    font-size: 52px;
+  }
+
+  .hero-product-frame {
+    aspect-ratio: 1.15;
+  }
 }
 
 .woodcraft-ticker {

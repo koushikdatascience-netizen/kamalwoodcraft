@@ -35,7 +35,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-        heading: ["Manrope", "Inter", "system-ui", "sans-serif"]
+        heading: ["Archivo Variable", "Arial", "sans-serif"]
       },
       boxShadow: {
         glow: "0 0 30px rgba(22,119,255,.22), 0 0 80px rgba(22,119,255,.1)"
